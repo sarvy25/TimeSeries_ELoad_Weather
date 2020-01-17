@@ -48,15 +48,7 @@ Lastly, to show the effect of the weather features on the electric loads, I have
 # Time series prediction
 
 
-To start with the available time series models, I have download and employed the open source software of the "Prophet Forcasting Model" released in Python by Facebook research teams.  Time series 
-
-
- Advantage of the Prophet package is that the forcast can be slightly tweaked using the easily-interpretable parameters. The core algorithm behind the Propher is the "Additive regression model". This model consists of the main components such as:
-
-- A piecewise linear or logistic growth curve trend.
-- A weekly seasonal component using dummy variables.
-- A yearly seasonal component modeled using Fourier series.
-- A user-provided list of important holidays.
+To start with the available time series models, I have download and employed the open source software of the "Prophet Forcasting Model" released in Python by Facebook research teams. The core algorithm behind the Propher is the "Additive regression model". Advantage of the Prophet package is that the forcast can be slightly tweaked using the easily-interpretable parameters.  Another main component of this model is the user-provided list of important holidays. First, I imported and fitted the model over the mask that only covers 2015. This is the first time I am using this model and the year selection was completely arbitarary.
 
 
 
