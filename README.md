@@ -4,17 +4,12 @@
 
 
 ### Topic of proposal:
-- Prediction of the future electricity load based on the temporal patterns (time series analysis) and available weather features (temperature, wind, humidity and ...).
+- Prediction of the future electricity load based on the temporal patterns (time series analysis) and available weather features.
 
 ## Introduction 
 
-Forcasting is one of the major challenges of the data scientists and often providing a reasonable prediction is not an easy task. Realibility, evaluation, efficiency, automation are some examples of the concerns researchers are facing while developing a new algorithm. To start with the available time series models, I have download and employed the open source software of the "Prophet Forcasting Model" released in Python by Facebook research teams. Advantage of the Prophet package is that the forcast can be slightly tweaked using the easily-interpretable parameters. The core algorithm behind the Propher is the "Additive regression model". This model consists of the main components such as:
-
-- A piecewise linear or logistic growth curve trend.
-- A weekly seasonal component using dummy variables.
-- A yearly seasonal component modeled using Fourier series.
-- A user-provided list of important holidays.
-
+Forcasting is one of the major challenges in datascience and often providing a reasonable prediction is not an easy task. Specifically, forcasting the energy load and price from historical data benefits a wide range of spectrum; from researchers and engineers in power agencies, transportation systems, vehicle manufacturer, consulting managements, to the local and national governments, energy forcast is the most vauable data. Furthermore, tackling the climate change is another main concerns of the recent world.  The effect of the climate change can impact on many industries; therefore, before any critical conditions happen we need to think of a way to tackle the situation. <br>
+The interesting problem  arises when we think of these two factors all together,that is, the energy forcast and the climate change. For this proposal, I am interested in studying the combination of these two parameters together. I want to investigate the machine learning approaches to successfully forcast the power demand and price based on the metrological variables such as temperature, humidity, wind and so on. Finally, this will open up versatile research directions on application of the machine learning for tackling the climate change.
 
 
 ## Analysis and results 
@@ -39,9 +34,8 @@ From pie chart below you can see the majority of the electric load generation is
 
 Lastly, to show the effect of the weather features on the electric loads, I have employed seaborn library and plotted the probability distribution of the total electric load based on each weather features over the selected hours (i.e. 7am, 1pm, 6pm, and 10 pm). Some of the results and observations are:
 
-
 - The probability of load distributions (even at specific time of the day) are compeletly different and it depends on the weather conditions.
-- The varience of the distibutions are different.  The data is more spread between (2000MW - 4000MW) for the morning and afternoon hours, and it shifts down to (2000 MW - 3000MW) for the late night hours.
+- The varience of the distibutions are different.  The data is more spread between (2000MW - 4000MW) for the morning and afternoon hours, and it shifts down to (2000 MW - 3000 MW) for the late night hours.
 - It's interesting that the thunderstorm weather makes the total load higher compared to the other weather conditions. Also, the distribution has a smaller standarad deviation compared to the other features.
 ![](images/probdist_0.png)
 ![](images/probdist_1.png)
@@ -53,21 +47,24 @@ Lastly, to show the effect of the weather features on the electric loads, I have
 
 # Time series prediction
 
+
+To start with the available time series models, I have download and employed the open source software of the "Prophet Forcasting Model" released in Python by Facebook research teams.  Time series 
+
+
+ Advantage of the Prophet package is that the forcast can be slightly tweaked using the easily-interpretable parameters. The core algorithm behind the Propher is the "Additive regression model". This model consists of the main components such as:
+
+- A piecewise linear or logistic growth curve trend.
+- A weekly seasonal component using dummy variables.
+- A yearly seasonal component modeled using Fourier series.
+- A user-provided list of important holidays.
+
+
+
+
 Time series cross validation is performed for the error prediction of the model. To do so, from "Prophet Forcasting Model", I have imported the cross_validation function to assess the prediction performance by specifying the "forcast horizon" and the "initial training period" as the input parameters. Then, the cross validation procedure can be done for a range of the historical cutoffs. 
 
 The output of cross_validation function is a dataframe with the true values y and the forecast value yhat, at each simulated forecast date and for each cutoff date. In particular, a forecast is made for every observed point between cutoff and cutoff + horizon. This dataframe can then be used to compute error measures of yhat vs. y. I made the prediction (yhat) of the total load actual using the first 180 days in 2015 as the training samples and 5 days as the horizon value.  Since model training procedure took about a day, I have saved the cross validated output in a .pkl format (df_cv.pkl) for the further analysis.  <br>   Finally, for the error prediction, I have used the Prophet performance_metrics function which calculate MSE, RMSE, and MAPE.  I have then plotted the Mean Absolute Percentage Error (MAPE) over the horizon period (5 days = 120 Hours). The blue line shows the MAPE (~ 8%), where the mean is taken over a rolling window of the dots which are the absolute percent error for each prediction in the cross validate data.  
 
 
 
-
----------------------
-
-<!-- 
-Using time series forcasting, explicitly additive model , to predic the electricla price over time by cosidering different metrologcal features such as temperature.
-- Additive model is deployed for the financial time series data modeling used in this project. For this purpose, I employed the Prophet forcasting package developed by Facebook.  
-
-
-Future Dataframe contains estimation of the future electrical price for the next two years which is visualized using the prorphet plot function.
-# Time series cross validation using Prophet
-
-To evaluate the performance of the model, we used the time seties cross validation by training the model on the intial 180 days (intial) and then forcasting the values on the following 5 days (cutoff).   The -->
+cutoff).   The -->
