@@ -19,21 +19,36 @@ Forcasting is one of the major challenges of the data scientists and often provi
 
 ## Analysis and results 
 
-For the data incubator project in summer 2020, I am interested in implementation of the time series forcasting methods to predict the electrical load and market price by considering the metrological conditions. <br>
+For the data incubator project in summer 2020, I am interested in implementation of the time series forcasting methods to predict the electrical load and market price by considering the effect of the  metrological conditions. <br>
 To start, I have dowloaded two available datasets from Kaggle website.  <br>
-1) Energy dataset : Consist of the hourly electric load generation from different energy resources such as fossil, solar, nuclear, wind, hydro and etc over the years of 2015 to 2018 in different cities of spain such as Barcelona, Bilbao, Madrid, Seville, Valencia. However, for the analysis part, I have only focused on one city (Valencia). <br>
-2) Weather dataset : Consists of the hourly weather conditions for the same cities over the past 4 years.  The weather conditions are pretty much versatile which lead into the more general interpretation and prediction of the electric load (or market price) at the end.   
-For the data analysis, especifically manipulations and visualziation part, I have used Python's packages such as Pandas and Seaborn. <br>
+1) Energy dataset: Consist of the hourly electric load generation from different energy resources such as fossil, solar, nuclear, wind, hydro and etc over the years of 2015 to 2018 in 5 largest cities of spain Barcelona, Bilbao, Madrid, Seville, Valencia. However, for the analysis part, I have only focused on one city, Valencia. <br>
+2) Weather dataset: Consists of the hourly weather conditions for the same cities over the past 4 years.  The weather conditions are pretty much versatile which can result into the more general interpretation, and prediction of the electric load (or market price) at the end.   
+For the data analysis, especifically manipulations and visualziation part, I have used Python's software packages such as Pandas and Seaborn. <br>
 
-For data visualization, I have ploted two figures.  The first figure shows the electrical load demand curves and the actual electrical price for the first week of January , April, August, and Decemeber of 2015.  
+# Data visualization
+For data visualization, I have ploted three figures.  The first figure shows the electrical load demand curves and the actual electrical price during the first week of months January ,April, August, and Decemeber of 2015.  
 ![](images/loadpricevshour.png)
 
-Based on this figure, we can clearly see the oscillation of the load over the hours of the day.  It appreas that there are two peaks indicating that there are two main interval for the electric load consumption for every day over one week.  The trend is approximatly is the same for months of January, April, July, and October.  One interesting point is that, on Fridays and weakends the two load peaks merge into one, denote the approximately high load distribution for those days. In the second subplot, I have plotted the electric price over the same interval for months of January, April, July, and October.  There seems to be correlation between the two plots as the electric load increases, price also increases and vice versa.   
+Based on this figure, we can clearly see the oscillations of the load plots over different hours of the days. Acoording to that, there are 7 oscillations each related to one day of the week, starting from Monday. Also, It apprears that there are two peaks indicating two main intervals for the electric load consumption every day over the period of one week. Plus, the load trend looks independent and approximately similar all over the months of January, April, July, and October. <br>
+One interesting point is that, the two load peaks that are distigushable during weekdays, merge into one over the weekends. This denotes the high and approximately uniform load distribution over morning to evening hours of the weekends (especially on Sundays). In the second subplot, I have plotted the electric price over the same interval over the months of January, April, July, and October.  There seems to be a correlation between the two plots as the electric load increases,also price increases and vice versa. <br>  
 
-
-From pie chart below you can see the majority of the electric load generation is due to the nuclear energy.  Since, according to dataset, there are multiple methods for  genertion of electric load thorugh fossil(brown coal,coald derived gas, hard coil, ...), wind (onshore, off shore), and hydro (pumped storage,run-of-river and poundage,..) resources, I have included them all in one dictionary and calculated the mean value for the total fossil, wind and hydro. In the pie chart you can see the mean values correposing to each type of the resource. 
+For the second visualization, I have plotted a pie chart showing the mean percentage value of electric generation due to all different types of the available energy resources over the past 4 years.  To further simply, as there are multiple methods for genertion of electric load through fossil(e.g. brown coal,coald derived gas, hard coil, ...), wind (e.g. onshore, off shore), and hydro (e.g. pumped storage,run-of-river and poundage,..), I have grouped them each individually in one list as the total_hydro, total_fossil, and wind; and then calculated the mean values of the **total** of the fossil, wind and hydro.
+From pie chart below you can see the majority of the electric load generation is due to the nuclear energy.  Since, a In the pie chart you can see the mean values correposing to each type of the resource. 
 
 ![](images/piechart.png)
+
+Lastly, to show the effect of the weather features on the electric loads, I have employed seaborn library and plotted the probability distribution of the total electric load based on each weather features over the selected hours (i.e. 7am, 1pm, 6pm, and 10 pm). Some of the results and observations are:
+
+
+- The probability of load distributions (even at specific time of the day) are compeletly different and it depends on the weather conditions.
+- The varience of the distibutions are different.  The data is more spread between (2000MW - 4000MW) for the morning and afternoon hours, and it shifts down to (2000 MW - 3000MW) for the late night hours.
+- It's interesting that the thunderstorm weather makes the total load higher compared to the other weather conditions. Also, the distribution has a smaller standarad deviation compared to the other features.
+![](images/probdist_0.png)
+![](images/probdist_1.png)
+![](images/probdist_2.png)
+![](images/probdist_3.png)
+
+
 
 
 # Time series prediction
