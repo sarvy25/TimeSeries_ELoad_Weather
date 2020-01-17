@@ -1,7 +1,15 @@
 # Data incubator project proposal 
-## By Sarvenaz Memarzadeh 
-### Ph.D. candidate in Electrical Engineering at University of Maryland - College Park
+<p align="center"><b>Sarvenaz Memarzadeh</b></p>
+<p align="center">Ph.D. candidate in Electrical Engineering at University of Maryland - College Park</p>
+<p align="center">smemarza@umd.edu</p>
 
+
+## Table of Contents
+1. [Topic of proposal](README.md#Topic_of_proposal)
+2. [Introduction](README.md#Introduction)
+3. [Analysis and results](README.md#Analysis_and_results)
+4. [Data visualization](README.md#Data_visualization)
+5. [Time series prediction](README.md#Time_series_prediction)
 
 ### Topic of proposal:
 - Prediction of the future electricity load based on the temporal patterns (time series analysis) and available weather features.
@@ -20,7 +28,7 @@ To start, I have dowloaded two available datasets from Kaggle website.  <br>
 2) Weather dataset: Consists of the hourly weather conditions for the same cities over the past 4 years.  The weather conditions are pretty much versatile which can result into the more general interpretation, and prediction of the electric load (or market price) at the end.   
 For the data analysis, especifically manipulations and visualziation part, I have used Python's software packages such as Pandas and Seaborn. <br>
 
-# Data visualization
+## Data visualization
 For data visualization, I have ploted three figures.  The first figure shows the electrical load demand curves and the actual electrical price during the first week of months January ,April, August, and Decemeber of 2015.  
 ![](images/loadpricevshour.png)
 
@@ -45,7 +53,7 @@ Lastly, to show the effect of the weather features on the electric loads, I have
 
 
 
-# Time series prediction
+## Time series prediction
 
 
 To start with the available time series models, I have download and employed the open source software of the "Prophet Forcasting Model" released in Python by Facebook research teams. The core algorithm behind the Propher is the "Additive regression model". Advantage of the Prophet package is that the forcast can be slightly tweaked using the easily-interpretable parameters.  Another main component of this model is the user-provided list of important holidays. First, I imported and fitted the model over the mask that only covers 2015. This is the first time I am using this model and the year selection was completely arbitarary.
