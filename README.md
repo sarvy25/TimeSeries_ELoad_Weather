@@ -1,7 +1,7 @@
-<p style="color:red";><b>Sarvenaz Memarzadeh - Ph.D. candidate in Electrical Engineering </b></p>
-<p style="color:red";> <b> University of Maryland - College Park </b></p>
-<p style="color:red";><b> smemarza@umd.edu </b></p>
-{: .gitlab-orange}
+<p align="center"><b>Sarvenaz Memarzadeh - Ph.D. candidate in Electrical Engineering</b></p>
+<p align="center"><b>University of Maryland - College Park</b></p>
+<p align="center"><b>smemarza@umd.edu</b></p>
+
 # Data incubator project proposal 
 ## Table of Contents
 1. [Topic of proposal](#topic)
