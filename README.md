@@ -1,9 +1,8 @@
+<p align="center"><b>Sarvenaz Memarzadeh - Ph.D. candidate in Electrical Engineering </b></p>
+<p align="center"> <b> University of Maryland - College Park </b></p>
+<p align="center"><b> smemarza@umd.edu </b></p>
+
 # Data incubator project proposal 
-<p align="center"><b>Sarvenaz Memarzadeh</b></p>
-<p align="center">Ph.D. candidate in Electrical Engineering at University of Maryland - College Park</p>
-<p align="center">smemarza@umd.edu</p>
-
-
 ## Table of Contents
 1. [Topic of proposal](#topic)
 2. [Introduction](#introduction)
