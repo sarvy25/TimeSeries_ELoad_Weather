@@ -5,21 +5,23 @@
 
 
 ## Table of Contents
-1. [Topic of proposal](README.md#Topic_of_proposal)
-2. [Introduction](README.md#Introduction)
-3. [Analysis and results](README.md#Analysis_and_results)
-4. [Data visualization](README.md#Data_visualization)
-5. [Time series prediction](README.md#Time_series_prediction)
+1. [Topic of proposal](#topic)
+2. [Introduction](#introduction)
+3. [Analysis and results](#analysis)
+4. [Data visualization](#datavis)
+5. [Time series prediction](#timeseries)
 
+<a name="topic"> </a>
 ### Topic of proposal:
 - Prediction of the future electricity load based on the temporal patterns (time series analysis) and available weather features.
 
+<a name="introduction"> </a>
 ## Introduction 
 
 Forcasting is one of the major challenges in datascience and often providing a reasonable prediction is not an easy task. Specifically, forcasting the energy load and price from historical data benefits a wide range of spectrum; from researchers and engineers in power agencies, transportation systems, vehicle manufacturer, consulting managements, to the local and national governments, energy forcast is the most vauable data. Furthermore, tackling the climate change is another main concerns of the recent world.  The effect of the climate change can impact on many industries; therefore, before any critical conditions happen we need to think of a way to tackle the situation. <br>
 The interesting problem  arises when we think of these two factors all together,that is, the energy forcast and the climate change. For this proposal, I am interested in studying the combination of these two parameters together. I want to investigate the machine learning approaches to successfully forcast the power demand and price based on the metrological variables such as temperature, humidity, wind and so on. Finally, this will open up versatile research directions on application of the machine learning for tackling the climate change.
 
-
+<a name="analysis"> </a>
 ## Analysis and results 
 
 For the data incubator project in summer 2020, I am interested in implementation of the time series forcasting methods to predict the electrical load and market price by considering the effect of the  metrological conditions. <br>
@@ -28,6 +30,7 @@ To start, I have dowloaded two available datasets from Kaggle website.  <br>
 2) Weather dataset: Consists of the hourly weather conditions for the same cities over the past 4 years.  The weather conditions are pretty much versatile which can result into the more general interpretation, and prediction of the electric load (or market price) at the end.   
 For the data analysis, especifically manipulations and visualziation part, I have used Python's software packages such as Pandas and Seaborn. <br>
 
+<a name="datavis"> </a>
 ## Data visualization
 For data visualization, I have ploted three figures.  The first figure shows the electrical load demand curves and the actual electrical price during the first week of months January ,April, August, and Decemeber of 2015.  
 ![](images/loadpricevshour.png)
@@ -52,7 +55,7 @@ Lastly, to show the effect of the weather features on the electric loads, I have
 
 
 
-
+<a name="timeseries"> </a>
 ## Time series prediction
 
 
