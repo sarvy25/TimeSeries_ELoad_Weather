@@ -55,9 +55,6 @@ Lastly, to show the effect of the weather features on the electric loads, I have
 
 
 <a name="timeseries"> </a>
-## Time series prediction
-
-<<<<<<< HEAD
 # Time series prediction
 
 
