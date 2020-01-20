@@ -1,6 +1,6 @@
-<p align="center"><b>Sarvenaz Memarzadeh - Ph.D. candidate in Electrical Engineering </b></p>
-<p align="center"> <b> University of Maryland - College Park </b></p>
-<p align="center"><b> smemarza@umd.edu </b></p>
+<p align="center"><b>Sarvenaz Memarzadeh - Ph.D. candidate in Electrical Engineering</b></p>
+<p align="center"><b>University of Maryland - College Park</b></p>
+<p align="center"><b>smemarza@umd.edu</b></p>
 
 # Data incubator project proposal 
 ## Table of Contents
@@ -11,7 +11,7 @@
 5. [Time series prediction](#timeseries)
 
 <a name="topic"> </a>
-### Topic of proposal
+## Topic of proposal:
 Prediction of the future electricity load and price based on the available weather features using 
 temporal patterns (time series analysis). 
 <a name="introduction"> </a>
@@ -54,16 +54,16 @@ Lastly, to show the effect of the weather features on the electric loads, I have
 
 
 
+
 <a name="timeseries"> </a>
 ## Time series prediction
 
-To start with the available time series models, I have download and employed the open-source software of the "Prophet Forecasting Model" released in Python by Facebook research teams. The core algorithm behind the Prophet is the "additive regression model".  The forecast can be slightly tweaked using the easily-interpretable parameters.  Another main component of this model is the user-provided list of important holidays. First, I imported and fitted the model over the mask that only covers 2015. This is the first attempt of me for the time series predictions using this package and the year selection was completely arbitrary.
+To start with the available time series models, I have download and employed the open-source software of the "Prophet Forecasting Model" released in Python by Facebook research teams. The core algorithm behind the Prophet is the "additive regression model".  The forecast can be slightly tweaked using the easily-interpretable parameters.  Another main component of this model is the user-provided list of important holidays. 
 
-
+First, I imported and fitted the model over the mask that only covers 2015. This is the first attempt of me for the time series predictions using this package and the year selection was completely arbitrary.
 Time series cross-validation is performed for the error prediction of the model. To do so, from the "Prophet Forecasting Model", I have imported the cross_validation function to assess the prediction performance by specifying the "forecast horizon" and the "initial training period" as the input parameters. Then, the cross-validation procedure can be done for a range of historical cutoffs. 
 
-The output of the cross_validation function is a data frame with the true value y and the forecast value yhat, at each simulated forecast date and for each cutoff date. In particular, a forecast is made for every observed point between cutoff and cutoff + horizon. This data frame can then be used to compute error measures of yhat vs. y. I made the prediction (yhat) of the total load actual using the first 180 days in 2015 as the training samples and 5 days as the horizon value.  Since the model training procedure took about a day, I have saved the cross-validated output in a .pkl format (df_cv.pkl) for further analysis.  <br>  
+The output of the cross_validation function is a data frame with the true value y and the forecast value yhat, at each simulated forecast date and for each cutoff date. In particular, a forecast is made for every observed point between cutoff and cutoff + horizon. This data frame can then be used to compute error measures of yhat vs. y. I made the prediction (yhat) of the total load actual using the first 180 days in 2015 as the training samples and 5 days as the horizon value.  Since the model training procedure took about a day, I have saved the cross-validated output in a .pkl format (df_cv.pkl) for further analysis.  <br>
 
-Finally, to evaluate the performance of the model, I used the Prophet performance_metrics function which calculates its mean absolute percentage error (MAPE).  I plotted the MAPE over the horizon period of (5 days = 120 Hours) as shown in the figure below. The blue line demonstrates the MAPE of (~ 8%), where the mean is taken over a rolling window of the dots which are the absolute percent error for each prediction in the cross-validated data.
+Finally, to evaluate the performance of the model, I used the Prophet performance_metrics function which calculates its mean absolute percentage error (MAPE).  I plotted the MAPE over the horizon period of (5 days = 120 Hours) as shown in the figure below. The blue line demonstrates the MAPE of (~ 8%), where the mean is taken over a rolling window of the dots which are the absolute percent error for each prediction in the cross-validated data.  
 ![](images/fig_cv.png)
-
