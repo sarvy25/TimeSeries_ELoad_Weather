@@ -13,7 +13,7 @@
 
 <a name="topic"> </a>
 ### Topic of proposal:
-- Prediction of the future electricity load based on the temporal patterns (time series analysis) and available weather features.
+<font color="blue"> Prediction of the future electricity load based on the temporal patterns (time series analysis) and available weather features. </font>
 
 <a name="introduction"> </a>
 ## Introduction 
