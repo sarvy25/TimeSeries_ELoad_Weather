@@ -13,8 +13,8 @@
 
 <a name="topic"> </a>
 ### Topic of proposal:
-<font color="blue"> Prediction of the future electricity load based on the temporal patterns (time series analysis) and available weather features. </font>
-
+Prediction of the future electricity load and price based on the available weather features using 
+temporal patterns (time series analysis). 
 <a name="introduction"> </a>
 ## Introduction 
 
@@ -26,7 +26,7 @@ The interesting problem  arises when we think of these two factors all together,
 
 For the data incubator project in summer 2020, I am interested in implementation of the time series forcasting methods to predict the electrical load and market price by considering the effect of the  metrological conditions. <br>
 To start, I have dowloaded two available datasets from Kaggle website.  <br>
-1) Energy dataset: Consist of the hourly electric load generation from different energy resources such as fossil, solar, nuclear, wind, hydro and etc over the years of 2015 to 2018 in 5 largest cities of spain Barcelona, Bilbao, Madrid, Seville, Valencia. However, for the analysis part, I have only focused on one city, Valencia. <br>
+1) Energy dataset: Consist of the hourly electric load generation from different energy resources such as fossil, solar, nuclear, wind, hydro and etc over the years of 2015 to 2018 in 5 largest cities of spain; Barcelona, Bilbao, Madrid, Seville, Valencia. However, for the analysis part here, I have only focused on one city "Valencia" for now. <br>
 2) Weather dataset: Consists of the hourly weather conditions for the same cities over the past 4 years.  The weather conditions are pretty much versatile which can result into the more general interpretation, and prediction of the electric load (or market price) at the end.   
 For the data analysis, especifically manipulations and visualziation part, I have used Python's software packages such as Pandas and Seaborn. <br>
 
@@ -59,15 +59,11 @@ Lastly, to show the effect of the weather features on the electric loads, I have
 ## Time series prediction
 
 
-To start with the available time series models, I have download and employed the open source software of the "Prophet Forcasting Model" released in Python by Facebook research teams. The core algorithm behind the Propher is the "Additive regression model". Advantage of the Prophet package is that the forcast can be slightly tweaked using the easily-interpretable parameters.  Another main component of this model is the user-provided list of important holidays. First, I imported and fitted the model over the mask that only covers 2015. This is the first time I am using this model and the year selection was completely arbitarary.
-
-
+To start with the available time series models, I have download and employed the open source software of the "Prophet Forcasting Model" released in Python by Facebook research teams. The core algorithm behind the Prophet is the "additive regression model".  The forcast can be slightly tweaked using the easily-interpretable parameters.  Another main component of this model is the user-provided list of important holidays. First, I imported and fitted the model over the mask that only covers 2015. This is the first attemp of me for the time series predictions using this package and the year selection was completely arbitarary.
 
 
 Time series cross validation is performed for the error prediction of the model. To do so, from "Prophet Forcasting Model", I have imported the cross_validation function to assess the prediction performance by specifying the "forcast horizon" and the "initial training period" as the input parameters. Then, the cross validation procedure can be done for a range of the historical cutoffs. 
 
 The output of cross_validation function is a dataframe with the true values y and the forecast value yhat, at each simulated forecast date and for each cutoff date. In particular, a forecast is made for every observed point between cutoff and cutoff + horizon. This dataframe can then be used to compute error measures of yhat vs. y. I made the prediction (yhat) of the total load actual using the first 180 days in 2015 as the training samples and 5 days as the horizon value.  Since model training procedure took about a day, I have saved the cross validated output in a .pkl format (df_cv.pkl) for the further analysis.  <br>   Finally, for the error prediction, I have used the Prophet performance_metrics function which calculate MSE, RMSE, and MAPE.  I have then plotted the Mean Absolute Percentage Error (MAPE) over the horizon period (5 days = 120 Hours). The blue line shows the MAPE (~ 8%), where the mean is taken over a rolling window of the dots which are the absolute percent error for each prediction in the cross validate data.  
+![](images/fig_cv.png)
 
-
-
-cutoff).   The -->
