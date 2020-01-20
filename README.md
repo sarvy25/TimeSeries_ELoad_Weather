@@ -11,7 +11,7 @@
 5. [Time series prediction](#timeseries)
 
 <a name="topic"> </a>
-### Topic of proposal:
+## Topic of proposal:
 Prediction of the future electricity load and price based on the available weather features using 
 temporal patterns (time series analysis). 
 <a name="introduction"> </a>
