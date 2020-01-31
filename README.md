@@ -2,7 +2,7 @@
 <p align="center"><b>University of Maryland - College Park</b></p>
 <p align="center"><b>smemarza@umd.edu</b></p>
 
-# Data incubator project proposal 
+# Project proposal 
 ## Table of contents
 1. [Topic of proposal](#topic)
 2. [Introduction](#introduction)
@@ -24,7 +24,7 @@ Things become more interesting when these two critical problems meet, that is, t
 <a name="analysis"> </a>
 ## Analysis and results 
 
-For the data incubator project in summer 2020, I am interested in the implementation of the time series forecasting methods from the historical data to predict the electric load and consequently its market price by considering the effect of the meteorological conditions. <br>
+In this proposal, I am interested in the implementation of the time series forecasting methods from the historical data to predict the electric load and consequently its market price by considering the effect of the meteorological conditions. <br>
 To start, I downloaded two available datasets from the Kaggle website.  <br>
 1) Energy dataset: Consist of the hourly electric load generation from different energy resources such as fossil, solar, nuclear, wind, hydro, etc over the years of 2015 to 2018 in the 5 largest cities of Spain; Barcelona, Bilbao, Madrid, Seville, and Valencia. However, for the analysis part here, I have only focused on one city "Valencia" for now. <br>
 2) Weather dataset: Consist of the hourly weather conditions for the same geographical locations over the past 4 years. Fortunately, the weather conditions are pretty much versatile which can result in the more general interpretation and prediction of the electric load (or market price) at the end.   
