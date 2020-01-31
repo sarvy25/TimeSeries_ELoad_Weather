@@ -3,7 +3,7 @@
 <p align="center"><b>smemarza@umd.edu</b></p>
 
 # Data incubator project proposal 
-## Table of Contents
+## Table of contents
 1. [Topic of proposal](#topic)
 2. [Introduction](#introduction)
 3. [Analysis and results](#analysis)
